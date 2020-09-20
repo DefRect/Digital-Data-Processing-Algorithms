@@ -15,7 +15,7 @@ public class MatchTemplate {
 
         // Do the Matching and Normalize
         Imgproc.matchTemplate(img, temp, result, match_method);
-        //Core.normalize(result, result, 0, 1, Core.NORM_MINMAX, -1, new Mat());
+        Core.normalize(result, result, 0, 1, Core.NORM_MINMAX, -1, new Mat());
 
         // Localizing the best match with minMaxLoc
         Core.MinMaxLocResult mmr = Core.minMaxLoc(result);
@@ -28,7 +28,8 @@ public class MatchTemplate {
         drawLine(img, matchLoc, matchLoc.x, matchLoc.y + temp.rows(), matchLoc.x, matchLoc.y, rotate);
 
         // Save the visualized detection.
-        Imgcodecs.imwrite(outputFile, img);
+        result.convertTo(result, CvType.CV_8UC1, 255.0);
+        Imgcodecs.imwrite(outputFile, result);
 
     }
 

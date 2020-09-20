@@ -18,9 +18,9 @@ public class Main {
 
         Program program = new Program();
         System.out.println("OWN!!!");
-        program.run(INPUT_FILE_MAIN, INPUT_FILE_OWN, OUTPUT_FILE_OWN, Imgproc.TM_CCORR_NORMED);
+        program.run(INPUT_FILE_MAIN, INPUT_FILE_OWN, OUTPUT_FILE_OWN, Imgproc.TM_CCOEFF);
         System.out.println("FOREIGN!!!");
-        program.run(INPUT_FILE_MAIN, INPUT_FILE_FOREIGN, OUTPUT_FILE_FOREIGN, Imgproc.TM_CCORR_NORMED);
+        program.run(INPUT_FILE_MAIN, INPUT_FILE_FOREIGN, OUTPUT_FILE_FOREIGN, Imgproc.TM_CCORR);
 
     }
 }
